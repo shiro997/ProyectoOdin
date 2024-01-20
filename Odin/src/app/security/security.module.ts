@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LogInComponent } from './components/log-in/log-in.component';
 import { SecurityRoutingModule } from './security-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SecurityService } from './Service/security-service.service';
 
 
 
@@ -12,7 +15,12 @@ import { SecurityRoutingModule } from './security-routing.module';
   ],
   imports: [
     CommonModule,
-    SecurityRoutingModule
+    SecurityRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
+  ],
+  providers:[
+    SecurityService
   ],
   exports:[
     LogInComponent

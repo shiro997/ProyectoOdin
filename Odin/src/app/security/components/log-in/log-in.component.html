@@ -1,5 +1,5 @@
 <div class="container-fluid" id="log-container">
-  <form>
+  <form [formGroup]="frmLogIn">
     <div class="card">
       <div class="card-container">
         
@@ -9,17 +9,17 @@
           </div>
           <div class="row" id="mail-row">
             <div class="col">
-              <input type="email" class="form-control" placeholder="email">
+              <input type="email" class="form-control" placeholder="email" formControlName="Email">
             </div>
           </div>  
           <div class="row">
             <div class="col">
-              <input type="password" class="form-control" placeholder="password">
+              <input type="password" class="form-control" placeholder="password" formControlName="Password">
             </div>
           </div>
         </div>
         <div class="card-footer">
-          <button class="btn btn-primary">log in</button>
+          <button class="btn btn-primary" (click)="login()">log in</button>
         </div>
       </div>
     </div>

@@ -5,16 +5,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SecurityModule } from './security/security.module';
+import { HomeComponent } from './components/home/home.component';
+import { UsersModule } from './users/users.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    SecurityModule
+    SecurityModule,
+    UsersModule
   ],
   providers: [],
   bootstrap: [AppComponent]
