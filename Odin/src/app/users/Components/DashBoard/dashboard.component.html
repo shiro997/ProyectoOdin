@@ -23,6 +23,9 @@
       </ul>
       <div class="user-info" *ngIf="token!=undefined">
         <div class="nav-item dropdown">
+          <div>
+            <img src="{{user.ProfilePhoto}}" class="rounded-circle" style="height: 2rem;">
+          </div>
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             {{user.Name}}
           </a>
@@ -36,3 +39,66 @@
     </div>
   </div>
 </nav>
+
+<div class="container">
+  <div>
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item" *ngIf="UsrEn || UsrCl">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Soportes
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <div class="row" *ngFor="let supp of UserGeneral.Supports">
+              a
+            </div>    
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item" *ngIf="UsrEn">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Proveedor
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <div class="row">
+              {{UserGeneral.Provider}}
+            </div>    
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item" *ngIf="UsrCl">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Proveedores
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <div class="row" *ngFor="let supp of UserGeneral.Providers">
+              a
+            </div>    
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item" *ngIf="UsrPd">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Clientes
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <div class="row" *ngFor="let supp of UserGeneral.Clients">
+              a
+            </div>    
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
